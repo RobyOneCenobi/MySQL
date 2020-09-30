@@ -1,0 +1,3 @@
+SELECT nazwa_zwyczajowa, SUM(liczebnosc) AS ilePtakow 
+FROM gatunki, obserwacje WHERE gatunki.ID_gatunku = obserwacje.ID_gatunku
+GROUP BY nazwa_zwyczajowa ORDER BY ilePtakow DESC;
