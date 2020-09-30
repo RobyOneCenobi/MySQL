@@ -1,0 +1,5 @@
+SELECT gatunki.ID_gatunku, nazwa_zwyczajowa, COUNT(obserwacje.ID_gatunku) AS jakie
+FROM gatunki, obserwacje
+WHERE gatunki.ID_gatunku = obserwacje.ID_gatunku
+GROUP BY gatunki.ID_gatunku
+ORDER BY jakie DESC LIMIT 10;
