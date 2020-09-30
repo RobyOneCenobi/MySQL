@@ -1,0 +1,5 @@
+SELECT powiat, nazwa_zwyczajowa, opis, SUM(liczebnosc) AS licz
+FROM gatunki, lokalizacje, obserwacje
+WHERE gatunki.ID_gatunku = obserwacje.ID_gatunku AND lokalizacje.ID_lokalizacji = obserwacje.ID_lokalizacji
+AND nazwa_zwyczajowa LIKE '%dzieciol%' AND opis LIKE '%las%'
+GROUP BY powiat ORDER BY licz DESC;
